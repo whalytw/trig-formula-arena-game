@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="單元1–4三角公式四選一複習，三位學生可同時在觸控白板上獨立作答。">
+  <title>三角公式挑戰｜三人複習場</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230d1729'/%3E%3Cpath d='M8 34L22 12L39 34Z' fill='none' stroke='%235ee4c3' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="math.js" defer></script><script src="questions.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+ <header class="toolbar">
+  <div class="brand"><span class="brand-mark">π</span><div><h1>三角公式挑戰</h1><span>單元 1–4 · 三人複習場</span></div></div>
+  <div class="teacher-tools">
+   <button id="startAll" class="primary">三區一起開始</button>
+   <button id="pauseAll">暫停</button>
+   <button id="settingsOpen">教師設定</button>
+   <button id="themeToggle" aria-label="切換深色或淺色模式">淺色</button>
+   <button id="fullscreen">全螢幕</button>
+   <button id="lock">鎖定操作列</button>
+  </div>
+  <button id="unlock" hidden>長按 2 秒解鎖</button>
+ </header>
+ <main id="arena" class="arena" aria-label="三個獨立遊戲區域"></main>
+ <footer><span id="scopeSummary"></span><span>答對 +10 · 答錯／逾時 0 分 · 各區可獨立換人</span></footer>
+ <div id="pauseOverlay" class="pause-overlay" hidden><div><span class="pause-symbol">Ⅱ</span><h2>遊戲暫停</h2><p>計時與換題已暫停</p><button id="resume" class="primary">繼續遊戲</button></div></div>
+ <dialog id="settingsDialog">
+  <form id="settingsForm">
+   <div class="dialog-title"><div><span class="eyebrow">TEACHER SETTINGS</span><h2>教師設定</h2></div><button type="button" class="icon-close" id="settingsClose" aria-label="關閉">×</button></div>
+   <fieldset><legend>出題單元</legend><div id="unitChecks" class="unit-checks"></div></fieldset>
+   <div class="settings-grid">
+    <label>每人題數<select id="questionCount"></select></label>
+    <label>每題作答時間<select id="questionSeconds"></select></label>
+    <label>答案提醒停留<select id="feedbackSeconds"></select></label>
+    <label>座號範圍上限<select id="seatMax"></select></label>
+   </div>
+   <p class="settings-note">單元平均抽題；同一回合不重複。題庫共有 <strong id="bankCount"></strong> 題。設定會套用到之後開始的回合，正在作答的回合保留原設定。</p>
+   <p id="settingsError" class="error" role="alert"></p>
+   <div class="dialog-actions"><button type="button" id="settingsReset">恢復預設</button><button class="primary" type="submit">儲存設定</button></div>
+  </form>
+ </dialog>
+ <dialog id="reviewDialog"><div class="dialog-title"><h2 id="reviewTitle">錯題複習</h2><button class="icon-close" id="reviewClose" aria-label="關閉">×</button></div><div id="reviewContent"></div></dialog>
+ <div id="toast" role="status" hidden></div>
+ <noscript>請開啟瀏覽器的 JavaScript 功能後重新載入。</noscript>
+</body>
+</html>
