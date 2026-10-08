@@ -22,7 +22,7 @@
   <button id="unlock" hidden>長按 2 秒解鎖</button>
  </header>
  <main id="arena" class="arena" aria-label="三個獨立遊戲區域"></main>
- <footer><span id="scopeSummary"></span><span>答對 +10 · 答錯／逾時 0 分 · 各區可獨立換人</span></footer>
+ <footer><span id="scopeSummary"></span><span>答對＝設定秒數＋剩餘秒數 · 答錯／逾時 0 分 · 各區可獨立換人</span></footer>
  <div id="pauseOverlay" class="pause-overlay" hidden><div><span class="pause-symbol">Ⅱ</span><h2>遊戲暫停</h2><p>計時與換題已暫停</p><button id="resume" class="primary">繼續遊戲</button></div></div>
  <dialog id="settingsDialog">
   <form id="settingsForm">
@@ -39,7 +39,6 @@
    <div class="dialog-actions"><button type="button" id="settingsReset">恢復預設</button><button class="primary" type="submit">儲存設定</button></div>
   </form>
  </dialog>
- <dialog id="reviewDialog"><div class="dialog-title"><h2 id="reviewTitle">錯題複習</h2><button class="icon-close" id="reviewClose" aria-label="關閉">×</button></div><div id="reviewContent"></div></dialog>
  <div id="toast" role="status" hidden></div>
  <noscript>請開啟瀏覽器的 JavaScript 功能後重新載入。</noscript>
 </body>
